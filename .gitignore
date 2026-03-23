@@ -1,0 +1,38 @@
+# Data files (keep data/*.py)
+*.npy
+*.h5
+*.hdf5
+*.nii
+*.nii.gz
+
+# Results & checkpoints
+results/
+*.pth
+*.pt
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Environment
+.venv/
+venv/
+*.env
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log

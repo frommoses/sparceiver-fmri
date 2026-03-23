@@ -1,0 +1,29 @@
+# Default training configuration for Sparceiver-fMRI
+
+# Model
+num_latents: 64
+latent_dim: 32
+depth: 1                    # cross-attention iterations
+self_per_cross_attn: 2      # self-attention blocks per cross-attention
+latent_heads: 1
+cross_heads: 1
+weight_tie_layers: true
+topk: 16                    # sparse attention top-k
+num_freq_bands: 6
+max_freq: 10.0
+
+# Subject-aware
+subj_extraction_layer: 0    # extract subject token at 1st cross-attn layer
+subj_extraction_block: 1    # extract at 2nd self-attn block
+lambda_subj: 1.0            # weight for subject prediction loss
+
+# Training
+batch_size: 2
+num_epochs: 20
+num_folds: 2                # k-fold cross-validation
+learning_rate: 0.003
+warmup_pct: 0.15            # OneCycleLR warmup percentage
+div_factor_initial: 25
+div_factor_final: 1000
+optimizer: AdamW
+seed: 777
